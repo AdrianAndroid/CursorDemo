@@ -1,5 +1,6 @@
 package com.smallluosid.aaaatestandroid
 
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -11,7 +12,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         findViewById<View>(R.id.checkInternet).setOnClickListener {
-            val check = ContextCompat.checkSelfPermission(this@MainActivity, android.Manifest.permission.INTERNET)
+            val permiss = ContextCompat.checkSelfPermission(this@MainActivity, android.Manifest.permission.INTERNET)
+            val check = permiss == PackageManager.PERMISSION_GRANTED
             Toast.makeText(this@MainActivity, "是否有网络权限 : ${check}", Toast.LENGTH_SHORT).show()
         }
         findViewById<View>(R.id.playMusic).setOnClickListener {
