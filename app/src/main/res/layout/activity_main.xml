@@ -1,41 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFF2D9">
 
-    <Button
-        android:id="@+id/parseDes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="解析des"/>
-    <Button
-        android:id="@+id/checkInternet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="检查网络权限"/>
-    <Button
-        android:id="@+id/playMusic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="播放音乐"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-    <Button
-        android:id="@+id/stopMusic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="暂停音乐"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-    <Button
-        android:id="@+id/checkUrl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="检查不存在的链接"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circle_background"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="8dp">
 
-    <Button
-        android:id="@+id/playErrorMusic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="播放错误的链接"/>
+                <TextView
+                    android:id="@+id/dateText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2025年1月25日"
+                    android:textColor="#B71C1C"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
-</LinearLayout>
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_launcher_foreground"
+                    android:tint="#B71C1C" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/lunarInfoTop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="#33B71C1C"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="甲辰龙年 丁五月 甲午日 | 腊月廿六"
+                android:textColor="#B71C1C"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/dayNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="center"
+                android:text="25"
+                android:textColor="#B71C1C"
+                android:textSize="120sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="星期六"
+                android:textColor="#B71C1C"
+                android:textSize="24sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="#33B71C1C"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="今日宜"
+                    android:textColor="#B71C1C"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="结婚 合婚 订婚 订盟"
+                    android:textColor="#B71C1C"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="今日忌"
+                    android:textColor="#B71C1C"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="动土 开业 交易 上梁"
+                    android:textColor="#B71C1C"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <com.smallluosid.aaaatestandroid.ZhuanPan
+                android:id="@+id/zhuanpan"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
